@@ -1,0 +1,34 @@
+package pisual.momo.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dom4j.DocumentException;
+
+import pisual.bank.model.Unit;
+import pisual.momo.util.ReadFilePoi;
+import pisual.momo.util.WriteFilePoi;
+import pisual.momo.util.XMLReadAndBuild;
+
+public class test {
+	public static void main(String[] args) {
+		XMLReadAndBuild x = new XMLReadAndBuild();
+		List<Unit> unitList = new ArrayList<Unit>();
+		WriteFilePoi w = new WriteFilePoi();
+		try {
+			unitList = x.XMLReadAndBuild("../PisualMOMOProjectChinaBankPoiSystem/src/pisual/bank/property/PisualOne.xml");
+			ReadFilePoi r = new ReadFilePoi();
+
+			int num = unitList.size();
+			for(int i=0;i<num;i++)
+			{
+				System.out.println("num "+i);
+			r.ReadFilePoi(unitList.get(i));
+			}
+			w.WriteFilePoi(unitList);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
