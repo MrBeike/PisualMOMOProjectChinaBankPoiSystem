@@ -1,0 +1,3 @@
+# PisualMOMOProjectChinaBankPoiSystem
+给中国人民银行编写的多表Excel混合计算系统技术模型，成品因为版权原因不能发出，但是基本原理全在这个里面。
+实现基于xml解析excel文件并作技术的功能
